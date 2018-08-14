@@ -46,11 +46,3 @@ module.exports = function validateRegisterInput(data){
         isValid: isEmpty(errors)
     }
 }
-
-// Person cleaning house w/ equipment
-// drivers license or passport - send a copy
-// current address 
-// phone number
-// criminal history screening
-// cleaner (some experience, 1 yr) vs. helpers
-// equipment vs no
