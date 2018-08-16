@@ -14,4 +14,8 @@ const User = require('../../models/User');
 
 router.get('/test', (req, res) => res.json({ msg: "Profile Works" }));
 
+// @route   GET api/profile
+// @desc    Tests profile route
+// @access  Public
+
 module.exports = router;
