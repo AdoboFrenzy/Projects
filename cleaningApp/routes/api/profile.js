@@ -38,7 +38,9 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 // @route   GET api/profile/handle/:handle (backend route)
 // @desc    Get profile by handle
 // @access  Public
-
+router.get('/handle/:handle', (req, res) => {
+    Profile.findOne({ handle: req.params.handle })
+})
 
 
 // @route   POST api/profile
