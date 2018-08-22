@@ -35,6 +35,12 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
         .catch(err => res.status(404).json(err));
 });
 
+// @route   GET api/profile/handle/:handle (backend route)
+// @desc    Get profile by handle
+// @access  Public
+
+
+
 // @route   POST api/profile
 // @desc    Create or Edit user profile
 // @access  Private
