@@ -159,4 +159,11 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
         })
 });
 
+// @route   POST api/profile/experience
+// @desc    Add experience to profile
+// @access  Private
+router.post('/experience', passport.authenticate('jwt', { session: false }), (req, res) => {
+    
+});
+
 module.exports = router;
