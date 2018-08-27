@@ -33,6 +33,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
             res.json(profile);
         })
         .catch(err => res.status(404).json(err));
+        
 });
 
 // @route   GET api/profile/all
@@ -52,6 +53,7 @@ router.get('/all', (req, res) => {
         .catch(err => 
             res.status(404).json({ profile: 'There are no profiles' })
         );
+
 });
 
 // @route   GET api/profile/handle/:handle (backend route)
@@ -71,6 +73,7 @@ router.get('/handle/:handle', (req, res) => {
             res.json(profile);
         })
         .catch(err => res.status(404).json(err))
+
 });
 
 // @route   GET api/profile/user/:user_id
@@ -90,6 +93,7 @@ router.get('/user/:user_id', (req, res) => {
             res.json(profile);
         })
         .catch(err => res.status(404).json({ profile: "There is no profile for this user" }))
+
 });
 
 // @route   POST api/profile
@@ -138,7 +142,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
                     { user: req.user.id }, 
                     { $set: profileFields }, 
                     { new: true }
-                    
+
                 )
                 .then(profile => res.json(profile));
 
