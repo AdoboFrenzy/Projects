@@ -33,7 +33,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
             res.json(profile);
         })
         .catch(err => res.status(404).json(err));
-        
+
 });
 
 // @route   GET api/profile/all
@@ -170,7 +170,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 // @desc    Add experience to profile
 // @access  Private
 router.post('/experience', passport.authenticate('jwt', { session: false }), (req, res) => {
-    
+    Profile.findOne({ user: })
 });
 
 module.exports = router;
