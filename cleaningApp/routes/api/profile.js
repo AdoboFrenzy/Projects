@@ -182,6 +182,7 @@ router.post('/experience', passport.authenticate('jwt', { session: false }), (re
 
     Profile.findOne({ user: req.user.id })
         .then(profile => {
+            
             const newExp = {
                 title: req.body.title,
                 company: req.body.company,
