@@ -136,6 +136,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     if(req.body.instagram) profileFields.social.instagram = req.body.instagram;
 
     Profile.findOne({ user: req.user.id })
+    
         .then(profile => {
             if(profile) {
                 // update if profile exists
