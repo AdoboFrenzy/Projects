@@ -186,12 +186,12 @@ router.delete('/comment/:id/:comment_id', passport.authenticate('jwt', { session
                 .indexOf(req.params.comment_id)
 
             // Splice comment out of array
-            post.comments.splice(remoeIndex, 1);
+            post.comments.splice(removeIndex, 1);
 
             post.save().then(post => res.json(post));
 
         })
-        .catch(err => res.status(404).json({ postnotfound: 'No post found' }));
+        .catch(err => res.status(404).json({ postnotfound: 'No post found :-(' }));
 
 });
 
